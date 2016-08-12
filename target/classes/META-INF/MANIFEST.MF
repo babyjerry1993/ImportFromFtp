@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Built-By: Shawn
+Build-Jdk: 1.8.0_91
+Bundle-ManifestVersion: 2
+Bundle-Version: 1.0.qualifier
+Created-By: Maven Integration for Eclipse
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Name: ImportFromFtp
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Nuxeo
+Bundle-SymbolicName: ImportFromFtp
+Nuxeo-WebModule: org.nuxeo.ecm.webengine.app.WebEngineModule;name=mysi
+ te;extends=base;package=org/nuxeo/sample
+
