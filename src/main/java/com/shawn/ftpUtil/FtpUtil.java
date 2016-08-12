@@ -111,9 +111,7 @@ public class FtpUtil {
 
 	//上传到nuxeo
 	public boolean uploadToNuxeo(){
-
 		return false;
-
 	}
 
 }
