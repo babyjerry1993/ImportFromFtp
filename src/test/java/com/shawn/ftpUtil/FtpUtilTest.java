@@ -21,5 +21,4 @@ public class FtpUtilTest {
 		ftpUtil.downFile(url, port, username, password, remotePath, fileName, localPath);
 
 	}
-
 }

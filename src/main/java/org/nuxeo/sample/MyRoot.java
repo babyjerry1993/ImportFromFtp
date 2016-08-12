@@ -30,7 +30,7 @@ public class MyRoot extends ModuleRoot {
     public Object doGet() {
 
     	System.out.println("hello world");
-        return getView("upload");
+        return getView("index");
     }
 
     @GET
