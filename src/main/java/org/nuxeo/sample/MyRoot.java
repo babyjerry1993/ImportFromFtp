@@ -1,13 +1,11 @@
 
-/**
-* @description ��һ�仰�������ļ���ʲô
+/*
 * @title ${file_name}
 * @package ${package_name}
 * @author Shawn
 * @update ${date} ${time}
 * @version V1.0
 */
-
 
 package org.nuxeo.sample;
 
@@ -32,7 +30,15 @@ public class MyRoot extends ModuleRoot {
     public Object doGet() {
 
     	System.out.println("hello world");
-        return getView("index");
+        return getView("upload");
+    }
+
+    @GET
+    @Path("upload")
+    public Object upload() {
+
+    	System.out.println("upload view");
+        return getView("upload");
     }
 
 }

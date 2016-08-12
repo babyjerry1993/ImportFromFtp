@@ -16,12 +16,9 @@
 	<description>
     
   </description>
-
 	<dependencies>
-		<dependency>
-			<groupId>javax.ws.rs</groupId>
-			<artifactId>jsr311-api</artifactId>
-		</dependency>
+		<!-- dependency> <groupId>javax.ws.rs</groupId> <artifactId>jsr311-api</artifactId> 
+			</dependency -->
 		<dependency>
 			<groupId>org.nuxeo.ecm.webengine</groupId>
 			<artifactId>nuxeo-webengine-core</artifactId>
@@ -42,13 +39,22 @@
 			<optional>false</optional>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.5</version>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+
+
 
 	</dependencies>
 
