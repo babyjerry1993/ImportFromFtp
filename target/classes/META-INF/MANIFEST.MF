@@ -4,12 +4,14 @@ Build-Jdk: 1.8.0_91
 Bundle-ManifestVersion: 2
 Bundle-Version: 1.0.qualifier
 Created-By: Maven Integration for Eclipse
-Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: .
+Bundle-SymbolicName: ImportFromFtp;singleton:=true
+Nuxeo-WebModule: com.shawn.controller.ImporterApp;name=mysite;
 Bundle-Name: ImportFromFtp
+Bundle-ClassPath: .
+Require-Bundle: org.nuxeo.ecm.webengine.core
+Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: Nuxeo
-Bundle-SymbolicName: ImportFromFtp
-Nuxeo-WebModule: org.nuxeo.ecm.webengine.app.WebEngineModule;name=mysi
- te;extends=base;package=org/nuxeo/sample
+Nuxeo-Component: OSGI-INF/importer-service-contrib.xml,OSGI-INF/defaul
+ t-importer-service.xml
 

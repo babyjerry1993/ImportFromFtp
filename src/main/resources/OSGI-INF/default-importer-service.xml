@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<component name="com.shawn.service.DefaultImporterComponent">
+
+  <documentation>
+    This allows to configure the default importer by contributing a specific
+    documentFactory and sourceNode implementations
+
+    <code>
+      <extension target="com.shawn.service.DefaultImporterComponent" point="importerConfiguration">
+        <importerConfig sourceNodeClass="com.shawn.source.FileSourceNode">
+          <documentModelFactory documentModelFactoryClass="com.shawn.factories.DefaultDocumentModelFactory"
+            leafType="File" folderishType="Folder" />
+          <repository>default</repository>
+          <bulkMode>true</bulkMode>
+        </importerConfig>
+      </extension>
+    </code>
+
+  </documentation>
+
+  <implementation
+    class="com.shawn.service.DefaultImporterComponent" />
+
+  <service>
+    <provide interface="com.shawn.service.DefaultImporterService" />
+  </service>
+
+  <extension-point name="importerConfiguration">
+    <object class="com.shawn.service.ImporterConfigurationDescriptor" />
+  </extension-point>
+  
+</component>
+

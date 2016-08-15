@@ -55,6 +55,8 @@ public class FtpUtil {
 			for (FTPFile ff : fs) {// 遍历ftp远程路径中的文件,匹配文件名的根据localFile输出到本地路径
 				if (ff.getName().equals(fileName)) {
 
+					System.out.println("here");
+
 					File localFile = new File(localPath + "/" + ff.getName());
 
 					OutputStream is = new FileOutputStream(localFile);

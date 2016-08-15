@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<component name="com.shawn.service.jaxrs.contrib">
+
+	<extension target="com.shawn.service.DefaultImporterComponent"
+		point="importerConfiguration">
+		<importerConfig sourceNodeClass="com.shawn.source.FileWithMetadataSourceNode">
+			<documentModelFactory leafType="File"
+				folderishType="Folder" documentModelFactoryClass="com.shawn.factories.DefaultDocumentModelFactory" />
+		</importerConfig>
+	</extension>
+
+	<require>org.nuxeo.ecm.core.convert.plugins</require>
+	<extension target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl"
+		point="converter">
+		<converter name="partialTextExtractor" class="com.shawn.random.PartialTextExtractor">
+			<sourceMimeType>text/partial</sourceMimeType>
+			<destinationMimeType>text/plain</destinationMimeType>
+		</converter>
+	</extension>
+
+
+	<extension target="org.nuxeo.ecm.webengine.WebEngineComponent"
+		point="resource">
+		<resource path="fileImporter"
+			class="com.shawn.controller.HttpFileImporterExecutor" />
+		<resource path="randomImporter" class="com.shawn.controller.RandomImporterExecutor" />
+	</extension>
+
+
+</component>

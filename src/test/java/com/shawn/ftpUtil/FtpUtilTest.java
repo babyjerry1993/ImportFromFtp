@@ -14,8 +14,8 @@ public class FtpUtilTest {
 		int port = 21;
 		String username = "shawn";
 		String password = "shawn";
-		String remotePath = "/456";
-		String fileName = "1.txt";
+		String remotePath = "/py";
+		String fileName = "123.txt";
 		String localPath = "C:/test";
 
 		ftpUtil.downFile(url, port, username, password, remotePath, fileName, localPath);
