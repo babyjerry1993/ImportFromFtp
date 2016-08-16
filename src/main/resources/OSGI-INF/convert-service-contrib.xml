@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<component name="com.shawn.convert">
+
+
+  <require>org.nuxeo.ecm.core.convert.plugins</require>
+  <extension target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl"
+             point="converter">
+
+    <converter name="partialTextExtractor"
+               class="com.shawn.random.PartialTextExtractor">
+      <sourceMimeType>text/partial</sourceMimeType>
+      <destinationMimeType>text/plain</destinationMimeType>
+    </converter>
+
+  </extension>
+
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<component name="com.shawn.tester">
+
+  <extension target="org.nuxeo.ecm.webengine.WebEngineComponent"
+             point="resource">
+    <resource path="fileImporter"
+              class="com.shawn.controller.HttpFileImporterExecutor"/>
+    <resource path="randomImporter"
+              class="com.shawn.controller.RandomImporterExecutor"/>
+  </extension>
+</component>

@@ -1,17 +1,13 @@
 Manifest-Version: 1.0
 Built-By: Shawn
 Build-Jdk: 1.8.0_91
-Bundle-ManifestVersion: 2
-Bundle-Version: 1.0.qualifier
+Bundle-ManifestVersion: 1
+Bundle-Version: 1.0.0
 Created-By: Maven Integration for Eclipse
-Bundle-SymbolicName: ImportFromFtp;singleton:=true
-Nuxeo-WebModule: com.shawn.controller.ImporterApp;name=mysite;
 Bundle-Name: ImportFromFtp
-Bundle-ClassPath: .
+Bundle-SymbolicName: com.shawn.ImportFromFtp;singleton:=true
 Require-Bundle: org.nuxeo.ecm.webengine.core
-Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: Nuxeo
-Nuxeo-Component: OSGI-INF/importer-service-contrib.xml,OSGI-INF/defaul
- t-importer-service.xml
+Nuxeo-WebModule: com.shawn.controller.ImporterApp
+Nuxeo-Component: OSGI-INF/importer-service-contrib.xml,OSGI-INF/conver
+ t-service-contrib.xml,OSGI-INF/default-importer-service.xml
 

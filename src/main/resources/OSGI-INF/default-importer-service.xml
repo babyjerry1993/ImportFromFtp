@@ -28,6 +28,6 @@
   <extension-point name="importerConfiguration">
     <object class="com.shawn.service.ImporterConfigurationDescriptor" />
   </extension-point>
-  
+
 </component>
 

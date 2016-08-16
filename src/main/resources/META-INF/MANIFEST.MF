@@ -1,13 +1,9 @@
 Manifest-Version: 1.0
-Bundle-SymbolicName: ImportFromFtp;singleton:=true
-Nuxeo-WebModule: com.shawn.controller.ImporterApp;name=mysite;
+Bundle-ManifestVersion: 1
 Bundle-Name: ImportFromFtp
-Bundle-Version: 1.0.qualifier
-Bundle-ClassPath: .
+Bundle-SymbolicName: com.shawn.ImportFromFtp;singleton:=true
+Bundle-Version: 1.0.0
 Require-Bundle: org.nuxeo.ecm.webengine.core
-Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-ManifestVersion: 2
-Bundle-Vendor: Nuxeo
-Nuxeo-Component: OSGI-INF/importer-service-contrib.xml,OSGI-INF/default-importer-service.xml
-
+Nuxeo-WebModule: com.shawn.controller.ImporterApp
+Nuxeo-Component: OSGI-INF/importer-service-contrib.xml,OSGI-INF/convert-service-contrib.xml,OSGI-INF/default-importer-service.xml
+ 

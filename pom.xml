@@ -9,7 +9,7 @@
 		<version>8.3</version>
 	</parent>
 
-	<groupId>org.nuxeo</groupId>
+	<groupId>org.nuxeo.shawn</groupId>
 	<artifactId>ImportFromFtp</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>ImportFromFtp</name>
@@ -17,8 +17,20 @@
     
   </description>
 	<dependencies>
-		<!-- dependency> <groupId>javax.ws.rs</groupId> <artifactId>jsr311-api</artifactId> 
-			</dependency -->
+
+		<!-- https://mvnrepository.com/artifact/org.jvnet.mimepull/mimepull -->
+		<dependency>
+			<groupId>org.jvnet.mimepull</groupId>
+			<artifactId>mimepull</artifactId>
+			<version>1.9.6</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.sun.jersey.contribs/jersey-multipart -->
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-multipart</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.nuxeo.ecm.webengine</groupId>
 			<artifactId>nuxeo-webengine-core</artifactId>
@@ -27,8 +39,6 @@
 			<groupId>org.nuxeo.ecm.webengine</groupId>
 			<artifactId>nuxeo-webengine-base</artifactId>
 		</dependency>
-
-		<!-- 加入 -->
 		<dependency>
 			<groupId>org.nuxeo.ecm.core</groupId>
 			<artifactId>nuxeo-core-api</artifactId>
@@ -72,18 +82,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.nuxeo.ecm.platform</groupId>
-			<artifactId>nuxeo-platform-content-template-manager</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.javasimon</groupId>
 			<artifactId>javasimon-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.nuxeo.ecm.core</groupId>
-			<artifactId>nuxeo-core-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -96,6 +96,25 @@
 			<artifactId>commons-codec</artifactId>
 			<optional>false</optional>
 		</dependency>
+		<dependency>
+			<groupId>org.nuxeo.ecm.platform</groupId>
+			<artifactId>nuxeo-importer-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.nuxeo.ecm.platform</groupId>
+			<artifactId>nuxeo-platform-content-template-manager</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.nuxeo.ecm.core</groupId>
+			<artifactId>nuxeo-core-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
 		<dependency>
@@ -104,14 +123,15 @@
 			<version>3.5</version>
 		</dependency>
 
+
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
 		</dependency>
 
 	</dependencies>
+
 
 	<build>
 		<plugins>
@@ -188,5 +208,11 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<scm>
+		<connection>scm:git:git://github.com/nuxeo/nuxeo-platform-importer.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:nuxeo/nuxeo-platform-importer.git</developerConnection>
+		<url>https://github.com/nuxeo/nuxeo-platform-importer</url>
+	</scm>
 
 </project>

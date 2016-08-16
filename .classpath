@@ -27,6 +27,14 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_91"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.nuxeo.ide.SDK_CONTAINER"/>
+	<classpathentry kind="con" path="org.nuxeo.ide.SDK_TEST_CONTAINER"/>
+	<classpathentry kind="con" path="org.nuxeo.ide.SDK_USERLIB_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/shawn/sts_work/.metadata/.plugins/org.nuxeo.ide.connect/repository/test-nextcont-xiaowen-xi-0.0.0-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
