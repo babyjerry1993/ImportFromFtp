@@ -72,13 +72,14 @@ public class DefaultImporterServiceImpl implements DefaultImporterService {
         executor.run(sourceNode, destinationPath, skipRootContainerCreation, batchSize, noImportingThreads, true);
     }
 
+    //默认情况下调用的是这个importDocments方法
     @Override
     public String importDocuments(AbstractImporterExecutor executor, String destinationPath, String sourcePath,
             boolean skipRootContainerCreation, int batchSize, int noImportingThreads, boolean interactive)
             {
-
+    	//创建一个源节点
         SourceNode sourceNode = createNewSourceNodeInstanceForSourcePath(sourcePath);
-        if (sourceNode == null) {
+        if (sourceNode == null) {//为null,则不能导入，报错退出
             log.error("Need to set a sourceNode to be used by this importer");
             return "Can not import";
         }
@@ -86,14 +87,21 @@ public class DefaultImporterServiceImpl implements DefaultImporterService {
             log.error("Need to set a documentModelFactory to be used by this importer");
         }
 
+        //build一个configuration《链式编程》
         ImporterRunnerConfiguration configuration = new ImporterRunnerConfiguration.Builder(sourceNode,
                 destinationPath, executor.getLogger()).skipRootContainerCreation(skipRootContainerCreation).batchSize(
                 batchSize).nbThreads(noImportingThreads).repository(repositoryName).build();
+        //根据配置得到一个Importer
         GenericMultiThreadedImporter runner = new GenericMultiThreadedImporter(configuration);
+        //设置事务timeout
         runner.setTransactionTimeout(transactionTimeout);
+        //filter过滤器
         ImporterFilter filter = new EventServiceConfiguratorFilter(false, false, false, false, bulkMode);
+        //importer add一个过滤器
         runner.addFilter(filter);
+        //设置文档模型工厂,给impoter一个文档模型
         runner.setFactory(getDocumentModelFactory());
+        //执行者executer
         return executor.run(runner, interactive);
     }
 

@@ -87,11 +87,13 @@ public abstract class AbstractImporterExecutor {
     }
 
     protected void startTask(ImporterRunner runner, boolean interactive) {
-        executorMainThread = new Thread(runner);
+        //new一个执行者线程类
+    	executorMainThread = new Thread(runner);
         executorMainThread.setName("ImporterExecutorMainThread");
         if (interactive) {
             executorMainThread.run();
         } else {
+        	//默认执行分支
             executorMainThread.start();
         }
     }
@@ -109,6 +111,7 @@ public abstract class AbstractImporterExecutor {
         if (interactive) {
             return "Task compeleted";
         } else {
+        	//默认执行分支
             return "Started";
         }
     }
