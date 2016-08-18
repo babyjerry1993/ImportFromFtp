@@ -9,32 +9,22 @@ import com.shawn.ftpUtil.FtpUtil;
 public class ImportFromFtp extends HttpFileImporterExecutor {
 
 	@Test
-	public void importFromFtp(){
+	public void importFromFtp() {
 
 		FtpUtil ftpUtil = new FtpUtil();
+		FtpInfo info = new FtpInfo("ftp://169.254.90.39", 21, "shawn", "shawn", "/py", "123.txt", "c:\test");
 
-		String url = "169.254.90.39";
-		int port = 21;
-		String username = "shawn";
-		String password = "shawn";
-		String remotePath = "/py";
-		String fileName = "123.txt";
-		String localPath = "C:/test";
+		ftpUtil.downloadSingleFromFtp(info);
 
-		ftpUtil.downFile(url, port, username, password, remotePath, fileName, localPath);
-
-
-
-		String destinationPath = localPath;
+		String destinationPath = info.getLocalPath();
 		String sourcePath = "/";
-        boolean skipRootContainerCreation = false;
-        int batchSize = 5;
-        int noImportingThreads = 5;
-        boolean interactive = false;
+		boolean skipRootContainerCreation = false;
+		int batchSize = 5;
+		int noImportingThreads = 5;
+		boolean interactive = false;
 
-
-        getImporterService().importDocuments(this, destinationPath, sourcePath, skipRootContainerCreation,
-                batchSize, noImportingThreads, interactive);
+		getImporterService().importDocuments(this, destinationPath, sourcePath, skipRootContainerCreation, batchSize,
+				noImportingThreads, interactive);
 
 	}
 
